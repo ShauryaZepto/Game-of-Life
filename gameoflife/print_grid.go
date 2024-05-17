@@ -4,13 +4,12 @@ import (
 	"fmt"
 )
 
-func (B *Board) print_grid(){
-	for i:= B.rows{
-		for j := B.cols{
-			if(B.grid[i][j]){
+func (B *Board) printgrid() {
+	for i := range B.rows {
+		for j := range B.cols {
+			if B.grid[i][j] {
 				fmt.Print("*")
-			}
-			else {
+			} else {
 				fmt.Print(".")
 			}
 		}
