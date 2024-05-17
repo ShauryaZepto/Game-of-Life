@@ -19,17 +19,11 @@ func (B *Board) Update_Board() {
 	copy(B.grid, temp.grid)
 }
 
-func (B *Board) Iterations(number_of_iterations int) {
-
-	fmt.Printf("Generation %d :", 0)
-	B.Print_Grid()
+func (B *Board) Simulate(number_of_iterations int) {
 
 	for i := range number_of_iterations {
 		B.Update_Board()
-		fmt.Printf("Generation %d :", i+1)
+		fmt.Printf("Generation %d :\n", i+1)
 		B.Print_Grid()
 	}
-
-	// fmt.Printf("Generation %d :", number_of_iterations+1)
-	// B.Print_Grid()
 }

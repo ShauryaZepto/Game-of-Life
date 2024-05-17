@@ -1,7 +1,7 @@
 package gameoflife
 
 import (
-	"io/ioutil"
+	"os"
 
 	"gopkg.in/yaml.v2"
 )
@@ -14,15 +14,17 @@ type Config struct {
 }
 
 func InitializeConfig(path string) (*Config, error) {
-	data, e := ioutil.ReadFile(path)
-	if e != nil {
-		return nil, e
+	file, err := os.Open(path)
+	if err != nil {
+		return nil, err
 	}
+	defer file.Close()
 
 	var config Config
-	e = yaml.Unmarshal(data, &config)
-	if e != nil {
-		return nil, e
+	decoder := yaml.NewDecoder(file)
+	err = decoder.Decode(&config)
+	if err != nil {
+		return nil, err
 	}
 
 	return &config, nil

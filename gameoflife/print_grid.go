@@ -15,4 +15,5 @@ func (B *Board) Print_Grid() {
 		}
 		fmt.Println()
 	}
+	fmt.Println()
 }
