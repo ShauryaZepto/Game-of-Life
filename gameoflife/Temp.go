@@ -1,10 +1,23 @@
-package main
+package gameoflife
 
 import (
 	"fmt"
 )
 
-var n, m int = 100, 100
+type GameofLife struct{
+	row int 
+	col int
+	grid [][] bool
+
+}
+
+func (G *GameofLife) init
+
+
+
+
+
+// var n, m int = 100, 100
 var initial_alive, iterations_number int
 
 func make_grid(grid [][]bool) {
@@ -84,8 +97,10 @@ func iterations_generation(grid [][]bool) {
 }
 
 func main() {
-	fmt.Print("Enter the grid size (n * m): ")
-	// fmt.Scan(&n,&m)
+	var n int
+	var m int
+	fmt.Print("Enter the grid size (row  column): ")
+	fmt.Scan(&n,&m)
 
 	grid := make([][]bool, n)
 	make_grid(grid)
