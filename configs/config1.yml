@@ -1,0 +1,7 @@
+rows: 3
+cols: 3
+iterations: 10
+matrix:
+  - [1, 0, 1]
+  - [0, 1, 0]
+  - [1, 1, 0]
