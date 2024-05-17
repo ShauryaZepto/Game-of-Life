@@ -18,8 +18,9 @@ func createBoard(rows int, cols int) *Board {
 	return board
 }
 
-func (G *Board) initialize(row int, col int) {
-	G.row = row
-	G.col = col
-grid:
+func (B *Board) check_valid_index(x int, y int) bool {
+	if x < 0 || x >= B.rows || y < 0 || y >= B.cols {
+		return false
+	}
+	return true
 }
