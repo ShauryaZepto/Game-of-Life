@@ -14,15 +14,15 @@ type Config struct {
 }
 
 func InitializeConfig(path string) (*Config, error) {
-	data, err := ioutil.ReadFile(path)
-	if err != nil {
-		return nil, err
+	data, e := ioutil.ReadFile(path)
+	if e != nil {
+		return nil, e
 	}
 
 	var config Config
-	err = yaml.Unmarshal(data, &config)
-	if err != nil {
-		return nil, err
+	e = yaml.Unmarshal(data, &config)
+	if e != nil {
+		return nil, e
 	}
 
 	return &config, nil

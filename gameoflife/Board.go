@@ -18,10 +18,15 @@ func CreateBoard(rows int, cols int) *Board {
 	return board
 }
 
-func (B *Board) Set_Board(matrix [][]bool, rows int, cols int) {
+func (B *Board) Set_Board(matrix [][]int, rows int, cols int) {
 	for i := range rows {
 		for j := range cols {
-			B.grid[i][j] = matrix[i][j]
+			// B.grid[i][j] = matrix[i][j]
+			if matrix[i][j] == 0 {
+				B.grid[i][j] = false
+			} else {
+				B.grid[i][j] = true
+			}
 		}
 	}
 }
