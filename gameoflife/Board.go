@@ -6,7 +6,7 @@ type Board struct {
 	grid [][]bool
 }
 
-func createBoard(rows int, cols int) *Board {
+func CreateBoard(rows int, cols int) *Board {
 	board := &Board{
 		rows: rows,
 		cols: cols,
@@ -18,7 +18,7 @@ func createBoard(rows int, cols int) *Board {
 	return board
 }
 
-func (B *Board) check_valid_index(x int, y int) bool {
+func (B *Board) Check_Valid_Index(x int, y int) bool {
 	if x < 0 || x >= B.rows || y < 0 || y >= B.cols {
 		return false
 	}
