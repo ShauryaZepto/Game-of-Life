@@ -7,9 +7,10 @@ import (
 )
 
 type Config struct {
-	Rows       int `yaml:"rows"`
-	Cols       int `yaml:"cols"`
-	Iterations int `yaml:"iterations"`
+	Rows       int     `yaml:"rows"`
+	Cols       int     `yaml:"cols"`
+	Iterations int     `yaml:"iterations"`
+	Matrix     [][]int `yaml:"matrix"`
 }
 
 func InitializeConfig(path string) (*Config, error) {
